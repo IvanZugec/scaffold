@@ -137,7 +137,7 @@ commands:
       find .ship-shape/ -type f -exec echo '  {}' \;
 
   debug:
-    usage: Enable debug configuration.
+    usage: "Enable debug configuration. (NOTE: Turn this feature on to use var_dump() in PHP and dump() in Twig)"
     cmd: |
       { ahoy run "php -v|grep -q Xdebug" && echo "Debug is already enabled"; } \
       || { export XDEBUG_ENABLE="true" && ahoy up cli test php && ahoy run "php -v|grep -q Xdebug" && echo "Enabled debug configuration. Use 'ahoy up' to disable."; }
